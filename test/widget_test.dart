@@ -7,7 +7,7 @@
 
 import 'package:flutter/material.dart';
 import 'package:flutter_test/flutter_test.dart';
-import 'package:wallet/expenses.dart';
+import 'package:wallet/widgets/expenses.dart';
 
 import 'package:wallet/main.dart';
 
