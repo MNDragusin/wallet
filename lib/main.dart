@@ -50,7 +50,7 @@ void main() {
           ),
         ),
       ),
-      themeMode: ThemeMode.dark,
+      themeMode: ThemeMode.system,
       home: Expenses(),
     ),
   );

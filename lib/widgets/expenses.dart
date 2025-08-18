@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:wallet/data/mock_expenses.dart';
+import 'package:wallet/widgets/chart/chart.dart';
 import 'package:wallet/widgets/expeses_list/expenses_list.dart';
 
 import '../models/expense.dart';
@@ -77,7 +78,12 @@ class _Expenses extends State<Expenses> {
           ),
         ],
       ),
-      body: Column(children: [Expanded(child: mainContent)]),
+      body: Column(
+        children: [
+          Chart(expenses: _registeredExpenses),
+          Expanded(child: mainContent),
+        ],
+      ),
     );
   }
 }
