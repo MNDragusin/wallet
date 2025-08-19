@@ -78,9 +78,8 @@ class _NewExpense extends State<NewExpense> {
   @override
   Widget build(BuildContext context) {
     final keyboardSpace = MediaQuery.of(context).viewInsets.bottom;
-
     return Padding(
-      padding: EdgeInsets.fromLTRB(16, 48, 16, keyboardSpace + 16),
+      padding: EdgeInsets.fromLTRB(16, 16, 16, keyboardSpace + 16),
       child: SizedBox(height: double.infinity,
         child: SingleChildScrollView(
           child: Column(
