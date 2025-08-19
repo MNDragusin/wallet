@@ -57,6 +57,9 @@ class _Expenses extends State<Expenses> {
 
   @override
   Widget build(BuildContext context) {
+    final isLandscape =
+        MediaQuery.of(context).size.width > MediaQuery.of(context).size.height;
+
     Widget mainContent = const Center(
       child: Text('No expenses found. Start adding some.'),
     );
@@ -78,12 +81,27 @@ class _Expenses extends State<Expenses> {
           ),
         ],
       ),
-      body: Column(
-        children: [
-          Chart(expenses: _registeredExpenses),
-          Expanded(child: mainContent),
-        ],
-      ),
+      body: isLandscape
+          ? _buildLandscapeContent(mainContent)
+          : _buildPortraitContent(mainContent),
+    );
+  }
+
+  Widget _buildLandscapeContent(Widget content) {
+    return Row(
+      children: [
+        Expanded(child: Chart(expenses: _registeredExpenses)),
+        Expanded(child: content),
+      ],
+    );
+  }
+
+  Widget _buildPortraitContent(Widget content) {
+    return Column(
+      children: [
+        Chart(expenses: _registeredExpenses),
+        Expanded(child: content),
+      ],
     );
   }
 }
